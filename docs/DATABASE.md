@@ -21,6 +21,12 @@ Migration `001-create-pooja-tables` creates:
   active/featured state.
 - `pooja_sankalp_options`: bilingual option names, fixed participant count,
   price/currency, ordering, and a cascading foreign key to `poojas`.
+- `pooja_slots`: online/offline schedule, capacity, and current reservation
+  count.
+- `pooja_bookings`: opaque tracking reference, hashed cancellation token, guest
+  contact, server-calculated amount, status, expiry, and foreign keys to the
+  Pooja, Sankalp option, and slot.
+- `pooja_booking_participants`: participant names linked to a booking.
 
-No sample rows are inserted. Booking, scheduling, payment, and other feature
-tables have not yet been implemented.
+No sample rows are inserted. Payment-attempt, payment-provider, and admin
+tables/APIs have not yet been implemented.

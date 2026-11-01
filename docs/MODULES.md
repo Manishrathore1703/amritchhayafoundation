@@ -6,7 +6,7 @@ not mean a feature is complete.
 | Module | Status | Current implementation |
 |---|---|---|
 | Foundation | In progress | Express app, MySQL pool/bootstrap, migration runner, health endpoints |
-| Pooja | Schema started | Pooja and Sankalp-option tables; no APIs or booking flow |
+| Pooja | Backend in progress | Public catalog/options/slots APIs, guest reservation/status/cancellation, and transactional slot capacity; payments and admin management pending |
 | Yatra | Not started | None |
 | Donations | Not started | None |
 | Goshala | Not started | None |

@@ -2,6 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const { getPool } = require("./config/db");
 const { errorHandler, notFound } = require("./middleware/error.middleware");
+const poojaRoutes = require("./modules/pooja/pooja.routes");
 
 const app = express();
 const allowedOrigins = (process.env.CORS_ORIGINS || "")
@@ -34,6 +35,7 @@ app.get("/api/health/ready", async (req, res) => {
     res.status(200).json({ status: "ready", database: "connected" });
 });
 
+app.use("/api", poojaRoutes);
 app.use(notFound);
 app.use(errorHandler);
 

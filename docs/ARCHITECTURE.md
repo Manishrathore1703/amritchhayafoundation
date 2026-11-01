@@ -16,8 +16,8 @@ The backend uses CommonJS modules and Express. Runtime code lives under
 Feature routes, controllers, services, repositories, and validations will be
 added within `src/modules/` as each module is implemented. No frontend or
 frontend-to-backend API layer currently exists in this repository.
-The original root-level `app.js`, `server.js`, and `config/` paths are kept as
-thin compatibility entry points; new implementation belongs under `src/`.
+The backend has one canonical source tree under `src/`; modules should not add
+parallel root-level controllers, routes, or configuration files.
 
 ## Database initialization
 
