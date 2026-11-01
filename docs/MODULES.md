@@ -7,7 +7,7 @@ not mean a feature is complete.
 |---|---|---|
 | Foundation | In progress | Express app, MySQL pool/bootstrap, migration runner, health endpoints |
 | Pooja | Backend in progress | Public catalog/options/slots APIs, guest reservation/status/cancellation, and transactional slot capacity; payments and admin management pending |
-| Yatra | Not started | None |
+| Yatra | Backend foundation implemented | Public package/departure APIs, guest reservations/status/cancellation, transactional seat capacity, scheduled expiry; verified payments and admin management pending |
 | Donations | Not started | None |
 | Goshala | Not started | None |
 | Gallery and media | Not started | None |

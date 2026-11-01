@@ -1,6 +1,7 @@
 const migrations = [
     require("../database/migrations/001-create-pooja-tables"),
-    require("../database/migrations/002-create-pooja-booking-tables")
+    require("../database/migrations/002-create-pooja-booking-tables"),
+    require("../database/migrations/003-create-yatra-tables")
 ];
 
 const initializeSchema = async (pool) => {

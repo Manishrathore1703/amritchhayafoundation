@@ -27,6 +27,12 @@ Migration `001-create-pooja-tables` creates:
   contact, server-calculated amount, status, expiry, and foreign keys to the
   Pooja, Sankalp option, and slot.
 - `pooja_booking_participants`: participant names linked to a booking.
+- `yatra_packages`: bilingual package content and base price/currency.
+- `yatra_departures`: package departure times, capacity, reserved seats, and
+  optional departure-specific price.
+- `yatra_bookings`: guest contact, traveler count, calculated total, status,
+  expiry, hashed cancellation token, and package/departure foreign keys.
+- `yatra_booking_travelers`: traveler names linked to a booking.
 
 No sample rows are inserted. Payment-attempt, payment-provider, and admin
 tables/APIs have not yet been implemented.

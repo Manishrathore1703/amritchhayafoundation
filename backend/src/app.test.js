@@ -80,3 +80,23 @@ test("Pooja booking endpoint rejects invalid input before database access", asyn
     assert.equal(response.status, 400);
     assert.equal((await response.json()).error.code, "INVALID_ID");
 });
+
+test("Yatra booking endpoint rejects invalid input before database access", async (t) => {
+    const baseUrl = await startTestServer(t);
+    const response = await fetch(`${baseUrl}/api/yatra/bookings`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({})
+    });
+
+    assert.equal(response.status, 400);
+    assert.equal((await response.json()).error.code, "INVALID_ID");
+});
+
+test("Yatra departure endpoint validates package IDs before database access", async (t) => {
+    const baseUrl = await startTestServer(t);
+    const response = await fetch(`${baseUrl}/api/yatra/packages/not-an-id/departures`);
+
+    assert.equal(response.status, 400);
+    assert.equal((await response.json()).error.code, "INVALID_ID");
+});

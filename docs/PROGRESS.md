@@ -18,21 +18,25 @@
   hashed cancellation tokens, and timed expiration.
 - Removed the unused empty legacy scaffold folders and compatibility wrappers;
   `backend/src/` is now the sole canonical runtime tree.
+- Started Yatra vertically with an additive package/departure/booking/traveler
+  migration, public catalog and departure APIs, and guest reservation,
+  cancellation, status, and expiry flows.
 - Added project, architecture, database, API contract, module status, and
   progress documentation.
 
 ## Verification
 
-Initial database migrations were applied successfully using the current local
-MySQL configuration. Live liveness/readiness and Pooja route checks returned
-expected responses. HTTP and validation tests, JavaScript syntax checks, and
-`npm audit` pass. Pooja payment-provider integration and protected admin
-management are not implemented.
+MySQL migrations through Yatra are applied. The Yatra API was exercised against
+MySQL with a temporary package/departure fixture: package detail, departure
+availability, database-priced guest booking, status lookup, cancellation, and
+capacity release all passed; the fixture was removed. The full automated test
+suite, JavaScript syntax checks, and `npm audit` also pass. Pooja/Yatra
+payment-provider integration and protected admin management are not
+implemented.
 
 ## Next work
 
-1. Apply and verify Pooja migration 002; finish API integration tests and admin
-   management after authentication is implemented.
-2. Add verified payment orders/webhooks before marking bookings confirmed.
-3. Integrate the Pooja frontend after frontend source is available.
-4. Continue remaining modules in the specified order.
+1. Build verified payment orders/webhooks and authentication before finalizing
+   paid Yatra bookings or protected package/departure administration.
+2. Integrate the frontend after its source is available.
+3. Continue Donations after the remaining Yatra dependencies are implemented.

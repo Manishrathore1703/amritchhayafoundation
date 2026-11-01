@@ -3,6 +3,7 @@ const express = require("express");
 const { getPool } = require("./config/db");
 const { errorHandler, notFound } = require("./middleware/error.middleware");
 const poojaRoutes = require("./modules/pooja/pooja.routes");
+const yatraRoutes = require("./modules/yatra/yatra.routes");
 
 const app = express();
 const allowedOrigins = (process.env.CORS_ORIGINS || "")
@@ -36,6 +37,7 @@ app.get("/api/health/ready", async (req, res) => {
 });
 
 app.use("/api", poojaRoutes);
+app.use("/api", yatraRoutes);
 app.use(notFound);
 app.use(errorHandler);
 

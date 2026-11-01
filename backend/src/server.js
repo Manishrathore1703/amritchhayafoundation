@@ -4,7 +4,12 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const app = require("./app");
 const initializeSchema = require("./config/initDB");
 const { closePool, initializeDatabase } = require("./config/db");
-const { expireReservations } = require("./modules/pooja/pooja.service");
+const { expireReservations: expirePoojaReservations } = require("./modules/pooja/pooja.service");
+const { expireReservations: expireYatraReservations } = require("./modules/yatra/yatra.service");
+
+const expireReservations = async () => {
+    await Promise.all([expirePoojaReservations(), expireYatraReservations()]);
+};
 
 const parsePort = () => {
     const port = Number(process.env.PORT || 3000);
